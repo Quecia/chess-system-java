@@ -2,6 +2,7 @@ package chess;
 /*Partida de xadrez*/
 import boardgame.Board;
 import boardgame.Position;
+import chess.pieces.King;
 import chess.pieces.Rook;
 
 public class ChessMatch {
