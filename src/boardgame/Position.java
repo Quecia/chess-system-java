@@ -1,5 +1,5 @@
 package boardgame; //Camada do tabuleiro
-
+/*Posição*/
 public class Position {
 
 	private int row;
