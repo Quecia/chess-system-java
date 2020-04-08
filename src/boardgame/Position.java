@@ -1,6 +1,6 @@
 package boardgame; //Camada do tabuleiro
-/*Posição*/
-public class Position {
+
+public class Position {/*Posição*/
 
 	private int row;
 	private int column;

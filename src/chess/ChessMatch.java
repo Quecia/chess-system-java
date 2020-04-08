@@ -1,12 +1,12 @@
 package chess;
-/*Partida de xadrez*/
+
 import boardgame.Board;
 import boardgame.Piece;
 import boardgame.Position;
 import chess.pieces.King;
 import chess.pieces.Rook;
 
-public class ChessMatch {
+public class ChessMatch {/*Partida de xadrez*/
 	
 	private Board board;
 	
@@ -25,8 +25,13 @@ public class ChessMatch {
 		return mat;
 	}
 	
-	/*Mover peças*/
-	public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targePosition) {
+	public boolean[][] possibleMoves(ChessPosition sourcePosition){/*Mostrar os possíveis movimentos*/
+		Position position = sourcePosition.toPosition();
+		validateSourcePosition(position);
+		return board.piece(position).possibleMoves();
+	}
+	
+	public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targePosition) {	/*Mover peças*/
 		Position source = sourcePosition.toPosition();
 		Position target = targePosition.toPosition();
 		validateSourcePosition(source);
@@ -42,8 +47,7 @@ public class ChessMatch {
 		return capturedPiece;
 	}
 	
-	/*Validar posição*/
-	private void validateSourcePosition(Position position) {
+	private void validateSourcePosition(Position position) {/*Validar posição*/
 		if(!board.thereIsAPiece(position)) {
 			throw new ChessException("There is no piece on source position.");
 		}
@@ -62,8 +66,7 @@ public class ChessMatch {
 		board.placePiece(piece, new ChessPosition(column, row).toPosition());
 	}
 	
-	/*Iniciar partida de xadrez*/
-	private void initialSetup() {
+	private void initialSetup() {/*Iniciar partida de xadrez*/
 		placeNewPiece('c', 1, new Rook(board, Color.WHITE));
         placeNewPiece('c', 2, new Rook(board, Color.WHITE));
         placeNewPiece('d', 2, new Rook(board, Color.WHITE));

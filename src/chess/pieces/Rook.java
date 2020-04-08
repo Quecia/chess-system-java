@@ -26,57 +26,45 @@ public class Rook extends ChessPiece {
 		
 		//acima
 		p.setValues(position.getRow() - 1, position.getColumn());
-		
-		/*Enquanto a posição estiver vaga...*/
-		while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
+		while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {/*Enquanto a posição estiver vaga...*/
 			mat[p.getRow()][p.getColumn()] = true;
 			p.setRow(p.getRow() - 1);
 		}
 		
-		/*Se houver uma peça oponente na posição indicada*/
-		if(getBoard().positionExists(p) && isThereOpponentPiece(p)) {
+		if(getBoard().positionExists(p) && isThereOpponentPiece(p)) {/*Se houver uma peça oponente na posição indicada*/
 			mat[p.getRow()][p.getColumn()] = true;
 		}
 		
 		//esquerda
 		p.setValues(position.getRow(), position.getColumn() - 1);
-		
-		/*Enquanto a posição estiver vaga...*/
-		while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
+		while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {/*Enquanto a posição estiver vaga...*/
 			mat[p.getRow()][p.getColumn()] = true;
 			p.setColumn(p.getColumn() - 1);
 		}
 		
-		/*Se houver uma peça oponente na posição indicada*/
-		if(getBoard().positionExists(p) && isThereOpponentPiece(p)) {
+		if(getBoard().positionExists(p) && isThereOpponentPiece(p)) {/*Se houver uma peça oponente na posição indicada*/
 			mat[p.getRow()][p.getColumn()] = true;
 		}
 		
 		//direita
 		p.setValues(position.getRow(), position.getColumn() + 1);
-		
-		/*Enquanto a posição estiver vaga...*/
-		while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
+		while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {/*Enquanto a posição estiver vaga...*/
 			mat[p.getRow()][p.getColumn()] = true;
 			p.setColumn(p.getColumn() + 1);
 		}
 		
-		/*Se houver uma peça oponente na posição indicada*/
-		if(getBoard().positionExists(p) && isThereOpponentPiece(p)) {
+		if(getBoard().positionExists(p) && isThereOpponentPiece(p)) {/*Se houver uma peça oponente na posição indicada*/
 			mat[p.getRow()][p.getColumn()] = true;
 		}
 		
 		//abaixo
 		p.setValues(position.getRow() + 1, position.getColumn());
-		
-		/*Enquanto a posição estiver vaga...*/
-		while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
+		while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {/*Enquanto a posição estiver vaga...*/
 			mat[p.getRow()][p.getColumn()] = true;
 			p.setRow(p.getRow() + 1);
 		}
 		
-		/*Se houver uma peça oponente na posição indicada*/
-		if(getBoard().positionExists(p) && isThereOpponentPiece(p)) {
+		if(getBoard().positionExists(p) && isThereOpponentPiece(p)) {/*Se houver uma peça oponente na posição indicada*/
 			mat[p.getRow()][p.getColumn()] = true;
 		}
 		
