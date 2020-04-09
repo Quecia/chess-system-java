@@ -5,15 +5,15 @@ import boardgame.Position;
 import chess.ChessPiece;
 import chess.Color;
 
-public class Rook extends ChessPiece {/*Peça: Torre*/
+public class Queen extends ChessPiece {/*Peça: Torre*/
 
-	public Rook(Board board, Color color) {
+	public Queen(Board board, Color color) {
 		super(board, color);
 	}
 	
 	@Override
 	public String toString() {
-		return "R";
+		return "Q";
 	}
 
 	@Override
@@ -60,6 +60,50 @@ public class Rook extends ChessPiece {/*Peça: Torre*/
 		while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {/*Enquanto a posição estiver vaga...*/
 			mat[p.getRow()][p.getColumn()] = true;
 			p.setRow(p.getRow() + 1);
+		}
+		
+		if(getBoard().positionExists(p) && isThereOpponentPiece(p)) {/*Se houver uma peça oponente na posição indicada*/
+			mat[p.getRow()][p.getColumn()] = true;
+		}
+		
+		//noroeste
+		p.setValues(position.getRow() - 1, position.getColumn() - 1);
+		while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {/*Enquanto a posição estiver vaga...*/
+			mat[p.getRow()][p.getColumn()] = true;
+			p.setValues(p.getRow() - 1, p.getColumn() - 1); 
+		}
+		
+		if(getBoard().positionExists(p) && isThereOpponentPiece(p)) {/*Se houver uma peça oponente na posição indicada*/
+			mat[p.getRow()][p.getColumn()] = true;
+		}
+		
+		//nordeste
+		p.setValues(position.getRow() - 1, position.getColumn() + 1);
+		while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {/*Enquanto a posição estiver vaga...*/
+			mat[p.getRow()][p.getColumn()] = true;
+			p.setValues(p.getRow() - 1, p.getColumn() + 1);
+		}
+		
+		if(getBoard().positionExists(p) && isThereOpponentPiece(p)) {/*Se houver uma peça oponente na posição indicada*/
+			mat[p.getRow()][p.getColumn()] = true;
+		}
+		
+		//sudeste
+		p.setValues(position.getRow() + 1, position.getColumn() + 1);
+		while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {/*Enquanto a posição estiver vaga...*/
+			mat[p.getRow()][p.getColumn()] = true;
+			p.setValues(p.getRow() + 1, p.getColumn() + 1);
+		}
+		
+		if(getBoard().positionExists(p) && isThereOpponentPiece(p)) {/*Se houver uma peça oponente na posição indicada*/
+			mat[p.getRow()][p.getColumn()] = true;
+		}
+		
+		//sudoeste
+		p.setValues(position.getRow() + 1, position.getColumn() - 1);
+		while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {/*Enquanto a posição estiver vaga...*/
+			mat[p.getRow()][p.getColumn()] = true;
+			p.setValues(p.getRow() + 1, p.getColumn() - 1);
 		}
 		
 		if(getBoard().positionExists(p) && isThereOpponentPiece(p)) {/*Se houver uma peça oponente na posição indicada*/
