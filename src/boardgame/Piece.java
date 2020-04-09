@@ -1,6 +1,6 @@
 package boardgame;
-/*Peça*/
-public abstract class Piece {
+
+public abstract class Piece {/*Peça*/
 
 	protected Position position;
 	private Board board;

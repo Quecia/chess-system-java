@@ -1,10 +1,10 @@
 package chess;
-/*Peça de xadrez*/
+
 import boardgame.Board;
 import boardgame.Piece;
 import boardgame.Position;
 
-public abstract class ChessPiece extends Piece {
+public abstract class ChessPiece extends Piece {/*Peça de xadrez*/
 
 	private Color color;
 	private int moveCount;

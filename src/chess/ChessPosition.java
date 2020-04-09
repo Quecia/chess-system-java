@@ -2,9 +2,7 @@ package chess;
 
 import boardgame.Position;
 
-/*Posição do Xadrez*/
-
-public class ChessPosition {
+public class ChessPosition {/*Posição do Xadrez*/
 
 	private char column;
 	private int row;

@@ -1,4 +1,4 @@
-package boardgame; //Camada do tabuleiro
+package boardgame; 
 
 public class Position {/*Posição*/
 

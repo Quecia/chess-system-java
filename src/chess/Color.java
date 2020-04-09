@@ -1,6 +1,6 @@
 package chess;
-/*Cores*/
-public enum Color {
+
+public enum Color {/*Cores*/
 
 	BLACK,
 	WHITE;

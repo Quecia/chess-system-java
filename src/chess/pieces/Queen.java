@@ -5,7 +5,7 @@ import boardgame.Position;
 import chess.ChessPiece;
 import chess.Color;
 
-public class Queen extends ChessPiece {/*Peça: Torre*/
+public class Queen extends ChessPiece {/*Peça: Rainha*/
 
 	public Queen(Board board, Color color) {
 		super(board, color);

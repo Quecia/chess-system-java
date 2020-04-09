@@ -1,6 +1,6 @@
 package boardgame;
-/*Tabuleiro*/
-public class Board {
+
+public class Board {/*Tabuleiro*/
 
 	private int rows;
 	private int columns;
